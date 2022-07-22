@@ -1,0 +1,10 @@
+{% extends 'tarot/layout.html' %}  ### ベースのHTML
+{% block title %}問い合わせ完了{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-secondary my-5">お問い合わせ完了</h2>
+    <p>メールが送信されました。ありがとうございます</p>
+    <a href="{% url 'index' %}" class="btn btn-outline-danger mt-5">ホームに戻る</a>
+</div>
+{% endblock %}

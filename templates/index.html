@@ -1,0 +1,148 @@
+{% extends 'tarot/layout.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block header %}
+
+<h1 class="display-4 text-primary"><font color="#4b0082" >You surely have a bright future.</font></h1>
+<p>悪い結果を回避するできます。結果を参考に良い未来を掴んでください</p>
+
+{% endblock %}
+
+{% block content %}
+<hr>
+
+<table class="table mt-3">
+    <tr><th>近い未来(占いは6カ月後の未来を示しています。)</th></tr>
+    <table class="table">
+        <tr>
+            <th>占い日</th>
+            <th>内容</th>
+            <th>結果</th>
+        </tr>
+    {% for item in data %}
+        <tr>
+            <td>{{item.pub_date}}</td>
+            <td>{{item.content}}</td>
+            <td><a href="{% url 'answer' item.id %}">
+                詳細</td>
+            <td><ul> 
+            {% for ob in item.message_set.all %}
+            <li>{{ob.title}}</li>
+            {% endfor %}
+            </ul></td>
+        <tr>
+    {% endfor %}
+    </table>
+</table>
+
+
+<!--ページネーション-->
+
+<ul class="pagination  justify-content-center">
+    {% if data.has_previous %}
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}">&laquo;first</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}{{data.previous_page_number}}">&laquo;prev</a>
+    </li>
+    {% else%}
+    <li class="page-item">
+        <a class="page-link">&laquo;first</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link">&laquo;prev</a>
+    </li>
+    {% endif %}
+    <li class="page-item">
+        <a class="page-link">{{data.number}}/{{data.paginator.num_pages}}</a>
+    </li>
+    {% if data.has_next %}
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}{{data.next_page_number}}">next &raquo;</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}{{data.paginator.num_pages}}">last &raquo;</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+        <a class="page-link">next &raquo;</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link">last &raquo;</a>
+    </li>
+    {% endif %}
+</ul>
+
+
+ 
+<tr><th>未評価</th></tr>
+<p>6カ月後占うならいに評価ができます</p>
+<table class="table">
+    <tr>
+        <th>占い日</th>
+        <th>内容</th>
+        <th>結果</th>
+        <th>評価</th>
+        <th>評価</th>
+    </tr>
+{% for item in data2 %}
+    {% if item.point %}
+    <tr>
+        <td>{{item.pub_date}}</td>
+        <td>{{item.content}}</td>
+        <td><a href="{% url 'answer' item.id %}">
+            詳細</a></td>
+        <td><a href="{% url 'point' item.id %}"></a>
+            <button class="py-0">{{item.point}}</button></a></td>
+        <td><a href="{% url 'point1' item.id %}"></a>
+            <button class="py-0">{{item.id}}</button></td>
+        <td><ul> 
+        </ul></td>
+    <tr>
+    {% endif %}
+{% endfor %}
+</table>
+</table>
+
+
+
+<ul class="pagination  justify-content-center">
+    {% if data.has_previous %}
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}">&laquo;first</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}{{data.previous_page_number}}">&laquo;prev</a>
+    </li>
+    {% else%}
+    <li class="page-item">
+        <a class="page-link">&laquo;first</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link">&laquo;prev</a>
+    </li>
+    {% endif %}
+    <li class="page-item">
+        <a class="page-link">{{data.number}}/{{data.paginator.num_pages}}</a>
+    </li>
+    {% if data.has_next %}
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}{{data.next_page_number}}">next &raquo;</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="{% url 'index' %}{{data.paginator.num_pages}}">last &raquo;</a>
+    </li>
+    {% else %}
+    <li class="page-item">
+        <a class="page-link">next &raquo;</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link">last &raquo;</a>
+    </li>
+    {% endif %}
+</ul>
+
+{% endblock %}
+

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}認証{% endblock %}
+{% block content %}
+<div class="container-fluid home">
+    <div class="row flex-nowrap">
+      <div class="bg-light m-3 p-2">
+        <h4>ログオン情報</h4>
+        {% if user.is_authenticated %}
+        <h5>
+          ログオンユーザ名： {{ user.get_username }} さん<br>
+          メールアドレス： {{ user.password }}<br>
+          セッション開始時刻: {{ user.last_login }}
+        </h5>
+        {% endif %}
+      </div>
+    </div>
+</div>
+{% endblock %}

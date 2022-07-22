@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'tarot/css/style.css' %}" />
+</head>
+
+<body>
+    <section>
+        <tr>
+        <div class="container ">
+            <div class="card1"><p>表面</p>{{chtml2}}</div>
+            <div class="card1"><p>表面</p>{{chtml2}}</div>
+            <div class="card1"><p>表面</p>{{chtml3}}</div> 
+            <div class="card1"><p>結果</p>{{chtml4}}</div><div class="text1"><p>表面上には{{ctex1}}{{ctex2}}{{ctex3}}が現れています</p></div>
+            <div class="card1"><p>内面</p>{{chtml5}}</div>
+            <div class="card1"><p>内面</p>{{chtml6}}</div>
+            <div class="card1"><p>内面</p>{{chtml7}}</div>
+            <div class="card1"><p>気持ち</p>{{chtml8}}</div><p>内面には{{ctex4}}{{ctex5}}{{ctex6}}が現れています</p>
+            <div class="card1"><p>深層</p>{{chtml9}}</div>
+            <div class="card1"><p>深層</p>{{chtml10}}</div>
+            <div class="card1"><p>深層</p>{{chtml11}}</div>
+            <div class="card1"><p>周辺</p>{{chtml12}}</div><p>深層には{{ctex7}}{{ctex8}}{{ctex9}}が現れています</p>
+            <div class="hidden"></div>
+            <div class="hidden"></div>
+            <div class="hidden"></div>
+            <div class="card1"><p>自身</p>{{chtml13}}</div><P>結果は{{ctex11}}気持ちは{{ctex12}}周辺は{{ctex13}}自身は{{ctex14}}</p>
+        </div>
+
+        </tr>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+    <nav class="navbar navbar-expand navbar-dark fixed-top"  style="background-color: #6e5083" font-color="#FFFFFF";>
+    <ul class="navbar-nav mr-auto" ><!--align-content:space-between-->
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">top</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'start' %}">占う</a>
+        </li>    
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'past' %}">過去占い</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}" title="先生がonlineで相談にのりながら占います">依頼</a>
+        </li>
+    </ul>
+
+    <!--span class="h7">"{{login_user}}"</span-->
+    <span class="font-weight-bold">
+        <a href="/admin/logout?next=/tarot/">
+            [ logout ]</a></span>
+    </nav>
+
+<body class="container" style="padding-top: 70px;">
+
+</body>
+    <div>{% block header %}
+        {% endblock %}</div>
+    <div class="content">{% block content %}
+            {% endblock %}</div>
+    <hr>
+    <div class="my-3">
+
+
+    </div>
+</body>
+</html>

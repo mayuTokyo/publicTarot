@@ -1,0 +1,31 @@
+{% extends "./base.html" %}
+{% block content %}
+
+<form role="form" class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+
+  {% for field in form %}
+
+  {% if field.label == "ログインしたままにする" %}
+  <div class="form-group field">
+    <label for="{{ field.id_for_label }}">{{field.label}}　{{ field }}</label>
+  </div>
+
+  {% else %}
+  <div class="form-group field">
+    <label for="{{ field.id_for_label }}">{{field.label}}</label>
+    {{ field }}
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% for error in form.non_field_errors %}
+  <div class="alert-message">
+    <p>{{ error }}</p>
+  </div>
+  {% endfor %}
+
+  <button type="submit" class="btn-block btn btn-lg btn-primary">サインイン</button>
+  <p class="text-center">ユーザIDを登録したい方は <a href="{{ signup_url }}">ここから登録</a></p>
+</form>
+<!-- django form end -->
+{% endblock %}

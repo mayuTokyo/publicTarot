@@ -1,0 +1,120 @@
+
+html{
+ font-size:  100%;
+}
+body{
+    line-height:  1.7;
+    color: #432;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+.logo{
+    margin-top:  -30px;
+    margin-bottom:  -30px;
+    width: 200px;
+}
+
+.main-nav{
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li{
+    margin-left: 36px;
+}
+.main-nav a{
+    color: #432;
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+
+.page-header{
+    border-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Home*/
+.home-content{
+ text-align: center;
+ margin-top: 8%;
+}
+
+.home-content p{
+    font-size: 1.3rem;
+    margin: 10px 0 42px;
+}
+
+/*見出し*/
+.page-title{
+    font-size: 70px;
+    font-family: 'philosopher' serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+/*ボタン*/
+.button{
+    font-size: 1.375rem;
+    color: #fff;
+    border-radius: 5px;
+    padding: 14px 40px;
+}
+
+.button:hover{
+    background: (#c2cc96fb,0.5);
+    color: aquamarine;
+}
+
+/*大きな背景画像*/
+.big-bg{
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+#home{
+    background-image: url(../images/kira.jpg);
+    min-height: 100vh;
+}
+
+#home .page-title{
+    text-transform: none;
+}
+
+.card1 {
+    background: rgb(64, 63, 75);
+    color: royalblue;
+    margin: 10px;
+    padding: 10px;
+    height: 150px;
+    width: 65px;
+}
+
+.text1 {
+    background: rgb(36, 233, 247);
+    color: rgb(245, 246, 248);
+    margin: 10px;
+    padding: 10px;
+    height: 150px;
+    width: 800px;
+}
+
+.container{
+    height:  100vh;
+    background-image: url(../images/kira.jpg);
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 500px;
+    gap: 5px;
+
+}       
