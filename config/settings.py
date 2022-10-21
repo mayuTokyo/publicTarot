@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'll6&842$6etx&4asxkvo5pk22)v_q_cim-3xm#zxx=e%f$7r9k'
+#SECRET_KEY = '削除'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -150,6 +150,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_HOST = 'smtp.googlemail.com' #これでもいける
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mayuiphoneau@gmail.com'
+#EMAIL_HOST_USER = '削除'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER # send_mailのfromがNoneの場合自動で入る。
 EMAIL_HOST_PASSWORD = 'jnylwfetycxhbeea'
